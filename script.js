@@ -1,15 +1,17 @@
 const form = document.querySelector('form');
 
 form.addEventListener('submit', (e) => {
-    const searchValue = document.querySelector('input').value;
+    const searchValue = document.querySelector('input').value,
+          start = document.querySelector('.start'),
+          card = document.querySelectorAll('.card');
     e.preventDefault();
 
-    if (document.querySelector('.start')) {
-        document.querySelector('.start').remove();
+    if (start) {
+        start.remove();
     }
 
-    if (document.querySelectorAll('.card')) {
-        document.querySelectorAll('.card').forEach(card => {
+    if (card) {
+        card.forEach(card => {
             card.remove();
         });
     }
